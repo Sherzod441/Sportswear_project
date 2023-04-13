@@ -1,0 +1,110 @@
+#banner .search-catalog {
+    height: 80px;
+    /* background: #ccc; */
+    /* padding: 10px; */
+    margin-top: 20px;
+}
+#banner .search-catalog input {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: #fff;
+    border-radius: 30px;
+    font-size: 22px;
+    padding-left: 60px;
+    outline: none;
+}
+#banner .search-catalog input:focus {
+    color: var(--whitergba);
+}
+
+#banner .search-catalog input::placeholder {
+    color: var(--whitergba);
+}
+
+#banner .search-catalog form {
+    position: relative;
+}
+#banner .search-catalog form .search-end {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    color: var(--whitergba);
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#banner .search-catalog form .search-end.focus {
+    background: #ccc;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+#banner .search-catalog form .search-start {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 22px;
+    color: var(--whitergba);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner .banner-filter {
+    height: 60px;
+    background: var(--blackrgb);
+    padding: 10px;
+    border-radius: 30px;
+}
+#banner .banner-filter p {
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Carousel design */
+#banner .banner-carousel .carousel-images {
+    position: relative;
+    /* height: 600px; */
+}
+#banner .banner-carousel .carousel-images .image-block {
+    width: 100%;
+    height: 600px;
+}
+#banner .banner-carousel .carousel-images .image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#banner .banner-carousel .carousel-images .image-block .bg-image {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    /* z-index: 1; */
+}
+#banner .banner-carousel .carousel-button {
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+    /* z-index: 1; */
+}
+#banner .banner-carousel .carousel-button button {
+    height: 60px;
+    width: 60px;
+    outline: none;
+    border: none;
+    font-size: 23px;
+    background: var(--white);
+    margin-left: 10px;
+    border-radius: 50%;
+    color: var(--whitergba);
+}

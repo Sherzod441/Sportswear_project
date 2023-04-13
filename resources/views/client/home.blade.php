@@ -1,18 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
-    @vite('resources/css/app.css')
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-</head>
+@section('content')
+    {{-- Search place and carousel --}}
+    <section id="banner">
+        <div class="container">
+            {{-- search place --}}
+            <div class="banner-search">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="search-catalog">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <form action="">
+                                        <span class="search-start">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                        <input type="text" id="input" placeholder="Qidirish..." class="shadow-lg" />
+                                        <span id="search_end" class="search-end"><i
+                                                class="fa-solid fa-arrow-right"></i></span>
+                                    </form>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="banner-filter shadow-lg">
+                                        <p class="text-white">Narx bo'yicha</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<body class="bg-blue-500">
-    {{-- header --}}
-    @include('layouts.header')
-</body>
-
-</html>
+            {{-- Carousel --}}
+            <div class="banner-carousel">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="carousel-images">
+                            
+                            <div class="slider">
+                                <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr1.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div>
+                                <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr2.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div>
+                                <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr3.jpeg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div>
+                                <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr4.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div>
+                            </div>
+                            <div class="carousel-button">
+                                <button class="slick-left">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </button>
+                                <button class="slick-right">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
