@@ -57,12 +57,24 @@
     </div>
     <script>
         $(document).ready(function() {
+            // script for CAROUSEL
             $('.slider').slick({
                 autoplay: true,
                 autoplaySpeed: 3000,
                 nextArrow: $('.slick-right'),
                 prevArrow: $('.slick-left')
             });
+
+            // script for SEARCH PLACE
+            $('#input').focus(function() {
+                $('#search_end').addClass("focus")
+                $('#search_start').addClass('focus')
+            })
+            $('#input').focusout(function() {
+                $('#search_end').removeClass("focus")
+                $('#search_start').removeClass('focus')
+            })
+
         });
     </script>
 </body>
