@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     return view('welcome');
 // });
 
-Route::get('/', [HomePageController::class, 'home'])->name('client.home');
+Route::get('/', [HomePageController::class, 'index'])->name('client.home');
+Route::resource('products', ProductsController::class);
