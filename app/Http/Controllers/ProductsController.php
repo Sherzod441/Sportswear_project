@@ -30,18 +30,18 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('product_image');
-    $imageName = time().'.'.$image->extension();
+    //     $image = $request->file('product_image');
+    // $imageName = time().'.'.$image->extension();
 
-    $image->storeAs('public/images', $imageName);
+    // $image->storeAs('public/images', $imageName);
 
         $product = new Products();
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
         $product->product_size = $request->product_size;
         $product->product_type_id = $request->product_type_id;
-        // $product->product_image = $request->product_image;
-        $product->product_image = $imageName;
+        $product->product_image = $request->product_image;
+        $product->product_image = $request->file('product_image');
         $product->save();
         return redirect()->back()->with('success', 'Data Successfully saved.');
 
