@@ -1,0 +1,152 @@
+#banner .search-catalog {
+    height: 80px;
+    margin-top: 80px;
+}
+#banner .search-catalog input {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: #fff;
+    border-radius: 30px;
+    font-size: 22px;
+    padding-left: 60px;
+    outline: none;
+}
+#banner .search-catalog input:focus {
+    color: var(--whitergba);
+}
+
+#banner .search-catalog input::placeholder {
+    color: var(--whitergba);
+}
+
+#banner .search-catalog form {
+    position: relative;
+}
+#banner .search-catalog form .search-end {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    color: var(--whitergba);
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+#banner .search-catalog .search-end.focus {
+    background: var(--green);
+    color: var(--white);
+}
+#banner .search-catalog form .search-start {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 22px;
+    color: var(--whitergba);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+}
+#banner .search-catalog form .search-start.focus {
+    color: var(--black);
+}
+
+#banner .banner-filter {
+    height: 60px;
+    background: var(--blackrgb);
+    padding: 10px;
+    border-radius: 30px;
+}
+#banner .banner-filter p {
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Carousel design */
+#banner .banner-carousel .carousel-images {
+    position: relative;
+}
+#banner .banner-carousel .carousel-images .image-block {
+    width: 100%;
+    height: 600px;
+}
+#banner .banner-carousel .carousel-images .image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#banner .banner-carousel .carousel-images .image-block .bg-image {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    /* z-index: 1; */
+}
+#banner .banner-carousel .carousel-button {
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+    /* z-index: 1; */
+}
+#banner .banner-carousel .carousel-button button {
+    height: 60px;
+    width: 60px;
+    outline: none;
+    border: none;
+    font-size: 23px;
+    background: var(--white);
+    margin-left: 10px;
+    border-radius: 50%;
+    color: var(--whitergba);
+    transition: all 0.3s;
+}
+#banner .banner-carousel .carousel-button button:hover {
+    background: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+    /* box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3); */
+}
+
+/* Home popular design */
+#banner .home-popular .popular-text strong {
+    font-size: 40px;
+}
+#banner .home-popular .card-img-block {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+#banner .home-popular .card-img-block img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+}
+#banner .home-popular .card:hover .card-img-block img {
+    transform: scale(1.5);
+    transition: all 0.4s;
+}
+#banner .home-popular .card-img-text {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    text-align: center;
+}
+#banner .home-popular .card-img-text p {
+    background: var(--white);
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}

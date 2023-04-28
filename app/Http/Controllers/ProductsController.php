@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product_types;
 use App\Models\Products;
 use Illuminate\Http\Request;
-
 class ProductsController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Products::all();
-        return view('client.home', compact('products'));
+        return view('admin.products', compact('products'));
     }
 
     /**
@@ -21,7 +21,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $product_type = Product_types::all();
+        return view('admin.product_create', ['product_types' => $product_type]);
     }
 
     /**
@@ -29,15 +30,22 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $image = $request->file('product_image');
+    $imageName = time().'.'.$image->extension();
+
+    $image->storeAs('public/images', $imageName);
+
         $product = new Products();
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
         $product->product_size = $request->product_size;
-        $product->product_type_id = $request->product_type;
-        $product->product_image = $request->product_image;
+        $product->product_type_id = $request->product_type_id;
+        // $product->product_image = $request->product_image;
+        $product->product_image = $imageName;
         $product->save();
+        return redirect()->back()->with('success', 'Data Successfully saved.');
 
-        return redirect()->route('client.home');
+        // return redirect()->route('client.home');
     }
 
     /**
@@ -53,7 +61,7 @@ class ProductsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.product_create');
     }
 
     /**
@@ -62,10 +70,13 @@ class ProductsController extends Controller
     public function update(Request $request, string $id)
     {
         $product = Products::findOrFail($id);
-        $product->name = $request->name;
-        $product->description = $request->description;
-        $product->price = $request->price;
+        $product->product_name = $request->product_name;
+        $product->product_price = $request->product_price;
+        $product->product_size = $request->product_size;
+        $product->product_type_id = $request->product_type;
+        $product->product_image = $request->product_image;
         $product->save();
+        return redirect()->back()->with('success', 'Data Updated saved.');
 
         // return redirect()->route('client.home');
     }
@@ -77,5 +88,6 @@ class ProductsController extends Controller
     {
         $product = Products::findOrFail($id);
         $product->delete();
+        return redirect()->back()->with('success', 'Data delete saved.');
     }
 }

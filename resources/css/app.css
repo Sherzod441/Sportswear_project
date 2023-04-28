@@ -1,0 +1,13 @@
+@import "header.css";
+@import "footer.css";
+@import "home.css";
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --green: rgb(30, 208, 39);
+    --blackrgb: rgb(0, 10, 49);
+    --whitergba: rgba(57, 57, 57, 0.5);
+    --black2: #39363c;
+    --hover: #decc08;
+}

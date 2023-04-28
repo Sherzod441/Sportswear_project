@@ -1,82 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Home Page</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    {{-- <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Products</h2>
-                <a href="{{  }}" class="btn btn-primary mb-3">Create Product</a>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($products as $product)
-                            <tr>
-                                <td>{{ $product->name }}</td>
-                                <td>{{ $product->description }}</td>
-                                <td>{{ $product->price }}</td>
-                                <td>
-                                    <a href="{{ route('products.show', $product->id) }}" class="btn btn-info">Show</a>
-                                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
-                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display: inline-block;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+@section('content')
+    {{-- Search place and carousel --}}
+    <section id="banner">
+        <div class="container">
+            {{-- search place --}}
+            <div class="banner-search">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="search-catalog">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <form action="">
+                                        <span class="search-start" id="search_start">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                        <input type="text" id="input" placeholder="Qidirish..." class="shadow-lg" />
+                                        <span id="search_end" class="search-end"><i
+                                                class="fa-solid fa-arrow-right"></i></span>
                                     </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="banner-filter shadow-lg">
+                                        <p class="text-white">Narx bo'yicha <i class="fa-solid fa-shuffle"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Carousel --}}
+            <div class="banner-carousel">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="carousel-images shadow-lg">
+
+                            <div class="slider">
+                                @foreach ([0, 1, 2, 3] as $item)
+                                    <div class="image-block">
+                                        <div class="bg-image"></div>
+                                        <img src="{{ asset('images/cr' . $item . '.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                    </div>
+                                @endforeach
+                                {{-- <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr2.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div>
+                                <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr3.jpeg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div>
+                                <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr4.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div> --}}
+                            </div>
+                            <div class="carousel-button">
+                                <button class="slick-left">
+                                    <i class="fa-solid fa-angle-left"></i> </button>
+                                <button class="slick-right">
+                                    <i class="fa-solid fa-angle-right"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- ommaboplari --}}
+            <div class="home-popular my-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="popular-text">
+                            <p class="d-flex align-items-center"><i
+                                    class="fa-solid fa-star fa-2x me-3 mb-1"></i><strong>Ommabop tovarlar</strong></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    @foreach (['0' => 'Buxsi', '1' => 'Futbolka', '2' => 'Futbolka classic', '3' => 'Futbolka sport'] as $key => $value)
+                        <div class="col-md-3">
+                            <div class="card card-body border-0 shadow-lg p-0 position-relative">
+                                <div class="card-img-block">
+                                    {{-- {{$item}} --}}
+                                    <img src="{{ asset('images/cr' . $key . '.jpg') }}" alt="Image Not Found"
+                                        class="img-fluid" />
+                                </div>
+                                <div class="card-img-text position-absolute">
+                                    <p>{{$value}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
             </div>
         </div>
-    </div> --}}
-
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Create Product</h2>
-            <form action="{{ route('products.store') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label>Product name</label>
-                    <input type="text" name="product_name" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Product price</label>
-                    <input type="number" name="product_price" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Product size</label>
-                    <input type="text" name="product_size" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Product type</label>
-                    <input type="number" name="product_type" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Product image</label>
-                    <input type="file" name="product_image" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-primary">Create</button>
-            </form>
-        </div>
-    </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-</body>
-</html>
+    </section>
+@endsection
