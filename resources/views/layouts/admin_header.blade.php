@@ -32,10 +32,10 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>x
                             {{ Auth::user()->name }}
                         </a>
-
+                        
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -48,6 +48,21 @@
                             </form>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('products.create')}}" aria-current="page">Product create</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('products.index')}}" aria-current="page">Products</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('orders.index')}}" aria-current="page">Orders</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('product_types.create')}}" aria-current="page">Product types create</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('product_types.index')}}" aria-current="page">Product types</a>
+                      </li>
                 @endguest
             </ul>
         </div>
