@@ -101,7 +101,7 @@
             <div class="xit-products shadow-lg rounded-5 p-4">
                 <div class="text-slider-icon d-flex justify-content-between align-items-center p-2">
                     <div class="text-product">
-                        <h1>Xit PRoduct</h1>
+                        <h1>Xit PRoductlar</h1>
                     </div>
                     <div class="icon-slider">
                         <button class="icon-left">
