@@ -2,6 +2,7 @@
     height: 80px;
     margin-top: 80px;
 }
+
 #banner .search-catalog input {
     width: 100%;
     height: 60px;
@@ -12,6 +13,7 @@
     padding-left: 60px;
     outline: none;
 }
+
 #banner .search-catalog input:focus {
     color: var(--whitergba);
 }
@@ -23,6 +25,7 @@
 #banner .search-catalog form {
     position: relative;
 }
+
 #banner .search-catalog form .search-end {
     position: absolute;
     top: 10px;
@@ -38,10 +41,12 @@
     border-radius: 50%;
     transition: all 0.4s;
 }
+
 #banner .search-catalog .search-end.focus {
     background: var(--green);
     color: var(--white);
 }
+
 #banner .search-catalog form .search-start {
     position: absolute;
     top: 10px;
@@ -55,6 +60,7 @@
     justify-content: center;
     transition: all 0.4s;
 }
+
 #banner .search-catalog form .search-start.focus {
     color: var(--black);
 }
@@ -65,6 +71,7 @@
     padding: 10px;
     border-radius: 30px;
 }
+
 #banner .banner-filter p {
     font-size: 22px;
     text-align: center;
@@ -74,28 +81,33 @@
 #banner .banner-carousel .carousel-images {
     position: relative;
 }
+
 #banner .banner-carousel .carousel-images .image-block {
     width: 100%;
     height: 600px;
 }
+
 #banner .banner-carousel .carousel-images .image-block img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 #banner .banner-carousel .carousel-images .image-block .bg-image {
+    position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    position: absolute;
+    /* background: rgba(0, 0, 0, 0.1); */
     /* z-index: 1; */
 }
+
 #banner .banner-carousel .carousel-button {
     position: absolute;
     right: 50px;
     bottom: 20px;
     /* z-index: 1; */
 }
+
 #banner .banner-carousel .carousel-button button {
     height: 60px;
     width: 60px;
@@ -108,6 +120,7 @@
     color: var(--whitergba);
     transition: all 0.3s;
 }
+
 #banner .banner-carousel .carousel-button button:hover {
     background: var(--green);
     color: var(--white);
@@ -119,21 +132,25 @@
 #banner .home-popular .popular-text strong {
     font-size: 40px;
 }
+
 #banner .home-popular .card-img-block {
     width: 100%;
     height: 220px;
     overflow: hidden;
     border-radius: 10px;
 }
+
 #banner .home-popular .card-img-block img {
     width: 100%;
     height: 100%;
     transition: all 0.4s;
 }
+
 #banner .home-popular .card:hover .card-img-block img {
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition: all 0.4s;
 }
+
 #banner .home-popular .card-img-text {
     margin-left: auto;
     margin-right: auto;
@@ -143,10 +160,41 @@
     width: 60%;
     text-align: center;
 }
+
 #banner .home-popular .card-img-text p {
     background: var(--white);
     padding: 10px;
     border-radius: 20px;
     font-size: 18px;
     font-weight: 700;
+}
+
+/* Xit products design */
+#banner .xit-products {
+    height: 600px;
+    background: var(--white);
+}
+
+#banner .xit-products .icon-slider button {
+    height: 60px;
+    width: 60px;
+    outline: none;
+    border: none;
+    font-size: 23px;
+    background: var(--white);
+    margin-left: 6px;
+    border-radius: 50%;
+    color: var(--whitergba);
+    transition: all 0.3s;
+    border: 2px solid rgba(57, 57, 57, 0.2);
+}
+
+#banner .xit-products .icon-slider button:hover {
+    background: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+    border: none;
+}
+#banner .xit-products .text-product h1 {
+    font-weight: bold;
 }

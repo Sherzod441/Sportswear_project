@@ -38,24 +38,24 @@
                         <div class="carousel-images shadow-lg">
 
                             <div class="slider">
-                                @foreach ([0, 1, 2, 3] as $item)
+                                {{-- @foreach ([0, 1, 2, 3] as $item) --}}
                                     <div class="image-block">
                                         <div class="bg-image"></div>
-                                        <img src="{{ asset('images/cr' . $item . '.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                        <img src="{{ asset('images/cr0.jpg') }}" alt="Image Not Found" class="img-fluid" />
                                     </div>
-                                @endforeach
-                                {{-- <div class="image-block">
+                                {{-- @endforeach --}}
+                                <div class="image-block">
+                                    <div class="bg-image"></div>
+                                    <img src="{{ asset('images/cr1.jpg') }}" alt="Image Not Found" class="img-fluid" />
+                                </div>
+                                <div class="image-block">
                                     <div class="bg-image"></div>
                                     <img src="{{ asset('images/cr2.jpg') }}" alt="Image Not Found" class="img-fluid" />
                                 </div>
                                 <div class="image-block">
                                     <div class="bg-image"></div>
-                                    <img src="{{ asset('images/cr3.jpeg') }}" alt="Image Not Found" class="img-fluid" />
+                                    <img src="{{ asset('images/cr3.jpg') }}" alt="Image Not Found" class="img-fluid" />
                                 </div>
-                                <div class="image-block">
-                                    <div class="bg-image"></div>
-                                    <img src="{{ asset('images/cr4.jpg') }}" alt="Image Not Found" class="img-fluid" />
-                                </div> --}}
                             </div>
                             <div class="carousel-button">
                                 <button class="slick-left">
@@ -81,8 +81,8 @@
                 </div>
                 <div class="row">
                     @foreach (['0' => 'Buxsi', '1' => 'Futbolka', '2' => 'Futbolka classic', '3' => 'Futbolka sport'] as $key => $value)
-                        <div class="col-md-3">
-                            <div class="card card-body border-0 shadow-lg p-0 position-relative">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card card-body border-0 shadow-lg p-0 position-relative mb-3">
                                 <div class="card-img-block">
                                     {{-- {{$item}} --}}
                                     <img src="{{ asset('images/cr' . $key . '.jpg') }}" alt="Image Not Found"
@@ -96,6 +96,21 @@
                     @endforeach
 
                 </div>
+            </div>
+            {{-- Eng xitlari --}}
+            <div class="xit-products shadow-lg rounded-5 p-4">
+                <div class="text-slider-icon d-flex justify-content-between align-items-center p-2">
+                    <div class="text-product">
+                        <h1>Xit PRoduct</h1>
+                    </div>
+                    <div class="icon-slider">
+                        <button class="icon-left">
+                            <i class="fa-solid fa-angle-left"></i> </button>
+                        <button class="icon-right">
+                            <i class="fa-solid fa-angle-right"></i> </button>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
