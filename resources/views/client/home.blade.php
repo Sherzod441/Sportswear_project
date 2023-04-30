@@ -69,7 +69,7 @@
             </div>
 
             {{-- ommaboplari --}}
-            <div class="home-popular my-5">
+            {{-- <div class="home-popular my-5">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="popular-text">
@@ -84,7 +84,6 @@
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="card card-body border-0 shadow-lg p-0 position-relative mb-3">
                                 <div class="card-img-block">
-                                    {{-- {{$item}} --}}
                                     <img src="{{ asset('images/cr' . $key . '.jpg') }}" alt="Image Not Found"
                                         class="img-fluid" />
                                 </div>
@@ -96,9 +95,9 @@
                     @endforeach
 
                 </div>
-            </div>
+            </div>   --}}
             {{-- Eng xitlari --}}
-            <div class="xit-products shadow-lg rounded-5 p-4">
+            <div class="xit-products shadow-lg rounded-5 p-4 my-4">
                 <div class="text-slider-icon d-flex justify-content-between align-items-center p-2">
                     <div class="text-product">
                         <h1>Xit PRoductlar</h1>
@@ -114,9 +113,4 @@
             </div>
         </div>
     </section>
-
-    <div class="container">
-        <h1>{{ __('message.welcome') }}</h1>
-        <h1>{{ __('message.about') }}</h1>
-    </div>
 @endsection

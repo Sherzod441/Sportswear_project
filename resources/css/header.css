@@ -11,8 +11,17 @@
     font-size: 18px;
     color: var(--white);
     font-weight: 600;
-    margin-left: 10px;
+    margin: 5px;
 }
 .navbar .navbar-nav a:hover {
     color: var(--hover);
+}
+
+.navbar .nav-item.uzb {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+.navbar .nav-item.lang {
+    border-bottom: 5px solid var(--hover);
 }

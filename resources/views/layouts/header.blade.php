@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Sports Wear</a>
+        <a class="navbar-brand" href="{{ route('client.home') }}">Sports Wear</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,19 +8,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bosh sahifa</a>
+                    <a class="nav-link text-uppercase" href="{{ route('client.home') }}">Bosh sahifa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Biz haqimizda</a>
+                    <a class="nav-link text-uppercase" href="{{ route('client.about') }}">Biz haqimizda</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bog'lanish</a>
+                <li class="nav-item uzb {{ session()->get('lang') === 'uzb' ? 'lang' : '' }}">
+                    <a href="#" class="nav-link text-uppercase" onclick="changeLang('uzb')">Uzb</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" onclick="changeLang('uzb')">Uzb</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" onclick="changeLang('ru')">Ru</a>
+                <li class="nav-item rus {{ session()->get('lang') === 'ru' ? 'lang' : '' }}">
+                    <a href="#" class="nav-link text-uppercase" onclick="changeLang('ru')">Ru</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
