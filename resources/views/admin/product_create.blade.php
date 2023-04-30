@@ -5,8 +5,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            @if (session('success'))
+                <div class="alert alert-success p-3">
+                    <p>{{ session('success') }}</p>
+                </div>
+            @endif
             <h2>Create Product</h2>
-            <form action="{{ route('products.store') }}" method="POST">
+            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Product name</label>

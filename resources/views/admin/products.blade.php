@@ -24,7 +24,9 @@
                             <td>{{ $product->product_price }}</td>
                             <td>{{ $product->product_size }}</td>
                             <td>{{ $product->product_type_id }}</td>
-                            <td>{{ $product->product_image }}</td>
+                            <td>
+                                <img src="{{ $product->product_image }}" alt="Not found" width="50" height="40" class="img-fluid" />
+                            </td>
                             <td>
                                 {{-- <a href="{{ route('products.show', $product->id) }}" class="btn btn-info">Show</a> --}}
                                 <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>

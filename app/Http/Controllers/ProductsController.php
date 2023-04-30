@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Product_types;
 use App\Models\Products;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
+
 class ProductsController extends Controller
 {
+    protected $imageService;
+    public function __construct(ImageService $imageService)
+    {
+        $this->imageService = $imageService;
+    }
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $products = Products::all();
@@ -30,22 +38,18 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-    //     $image = $request->file('product_image');
-    // $imageName = time().'.'.$image->extension();
-
-    // $image->storeAs('public/images', $imageName);
-
-        $product = new Products();
-        $product->product_name = $request->product_name;
-        $product->product_price = $request->product_price;
-        $product->product_size = $request->product_size;
-        $product->product_type_id = $request->product_type_id;
-        $product->product_image = $request->product_image;
-        $product->product_image = $request->file('product_image');
-        $product->save();
+        $url = "";
+        if ($request->hasFile('product_image')) {
+            $url = $this->imageService->fileUpload($request->file('product_image'));
+        }
+        Products::query()->create([
+            'product_name' => $request->product_name,
+            'product_price' => $request->product_price,
+            'product_size' => $request->product_size,
+            'product_type_id' => $request->product_type_id,
+            'product_image' => $url,
+        ]);
         return redirect()->back()->with('success', 'Data Successfully saved.');
-
-        // return redirect()->route('client.home');
     }
 
     /**
