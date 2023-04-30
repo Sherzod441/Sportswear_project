@@ -27,3 +27,4 @@ Route::get('/', [HomePageController::class, 'home'])->name('client.home');
 Route::resource('products', ProductsController::class);
 Route::resource('orders', OrdersController::class);
 Route::resource('product_types', ProductTypeController::class);
+Route::get('/lang', [HomeController::class, 'lang'])->name('language');

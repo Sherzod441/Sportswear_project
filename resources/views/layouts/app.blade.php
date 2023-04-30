@@ -76,6 +76,12 @@
             })
 
         });
+
+        function changeLang(lang) {
+            let url = "{{ route('language') }}";
+            window.location.href = url + "?lang=" + lang;   
+            // console.log(url)
+        }
     </script>
 </body>
 

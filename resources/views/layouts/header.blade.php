@@ -17,10 +17,10 @@
                     <a class="nav-link" href="#">Bog'lanish</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('?lang=uzb') }}">Uzb</a>
+                    <a href="#" onclick="changeLang('uzb')">Uzb</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('?lang=ru') }}">Ru</a>
+                    <a href="#" onclick="changeLang('ru')">Ru</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

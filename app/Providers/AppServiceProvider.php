@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $lang = request()->get('lang', 'uzb'); 
-        App::setLocale($lang);
+        // $lang = request()->get('lang', 'uzb'); 
+        // App::setLocale($lang);
     }
 }
