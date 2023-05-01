@@ -75,11 +75,21 @@
                 $('#search_start').removeClass('focus')
             })
 
+            // product slider
+            $('.slider-product').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                nextArrow: $('.icon-right'),
+                prevArrow: $('.icon-left')
+            });
+
         });
 
         function changeLang(lang) {
             let url = "{{ route('language') }}";
-            window.location.href = url + "?lang=" + lang;   
+            window.location.href = url + "?lang=" + lang;
             // console.log(url)
         }
     </script>

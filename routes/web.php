@@ -27,7 +27,8 @@ Route::get('/', [HomePageController::class, 'home'])->name('client.home');
 Route::resource('products', ProductsController::class);
 Route::resource('orders', OrdersController::class);
 Route::resource('product_types', ProductTypeController::class);
-Route::get('/lang', [HomeController::class, 'lang'])->name('language');
+Route::get('/lang', [HomePageController::class, 'lang'])->name('language');
 Route::get('about', function() {
     return view('client.about');
 })->name('client.about');
+Route::get('order-item', [HomePageController::class, 'orderItem'])->name('order.item');

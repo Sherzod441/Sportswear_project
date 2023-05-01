@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -27,13 +26,4 @@ class HomeController extends Controller
         return view('admin.home');
     }
 
-    // lang method
-    public function lang(Request $request)
-    {
-        App::setLocale($request->lang);
-        session()->put('lang', $request->lang);
-
-        // dd($request->lang);
-        return redirect()->back();
-    }
 }

@@ -11,7 +11,7 @@
     font-size: 18px;
     color: var(--white);
     font-weight: 600;
-    margin: 5px;
+    margin: 3px;
 }
 .navbar .navbar-nav a:hover {
     color: var(--hover);
@@ -23,5 +23,21 @@
     justify-content: center;
 }
 .navbar .nav-item.lang {
-    border-bottom: 5px solid var(--hover);
+    border-bottom: 3px solid var(--hover);
+}
+.navbar-nav .cart-count {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: var(--hover);
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.navbar-nav .nav-link.cart-shop {
+    font-size: 24px;
 }
