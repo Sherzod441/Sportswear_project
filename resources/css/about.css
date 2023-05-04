@@ -1,8 +1,15 @@
 #about-us {
     margin-top: 100px;
-    height: 800px;
+    padding: 10px;
     background: var(--white);
 }
 #about-us .about-text h1 {
     font-weight: bold;
+    font-size: 40px;
+}
+#about-us .about-text .about-title p {
+    font-size: 22px;
+}
+#about-us .about-text .accordion-button {
+    font-size: 22px;
 }
