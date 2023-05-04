@@ -7,10 +7,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->routeIs('client.home') ? 'active' : '' }}">
                     <a class="nav-link text-uppercase" href="{{ route('client.home') }}">Bosh sahifa</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ request()->routeIs('client.about') ? 'active' : '' }} me-3">
                     <a class="nav-link text-uppercase" href="{{ route('client.about') }}">Biz haqimizda</a>
                 </li>
                 <li class="nav-item uzb {{ (!session()->has('lang') || session()->get('lang') === 'uzb') ? 'lang' : '' }}">
