@@ -112,25 +112,27 @@
                 <div class="products mt-3">
                     <div class="row">
                         <div class="slider-product">
-
-                            <div class="col-md-3 me-3">
-                                <div class="card card-body p-0 border-0">
-                                    <div class="product-img">
-                                        <img src="{{ asset('images/shoes/sh1.png') }}" alt="Product Image"
-                                            class="img-fluid" />
-                                    </div>
-                                    <div class="product-name mt-2">
-                                        <p>Kovush</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <p>200 000 so'm</p>
-                                    </div>
-                                    <div class="add-product">
-                                        <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga qo'shish</button>
+                            @foreach ($products as $product)
+                                <div class="col-md-3 me-3">
+                                    <div class="card card-body p-0 border-0">
+                                        <div class="product-img">
+                                            <img src="{{ $product->product_image }}" alt="Product Image"
+                                                class="img-fluid" />
+                                        </div>
+                                        <div class="product-name mt-2">
+                                            <p>{{ $product->product_name }}</p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>{{ $product->product_price }} so'm</p>
+                                        </div>
+                                        <div class="add-product">
+                                            <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga
+                                                qo'shish</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 me-3">
+                            @endforeach
+                            {{-- <div class="col-md-3 me-3">
                                 <div class="card card-body p-0 border-0">
                                     <div class="product-img">
                                         <img src="{{ asset('images/shoes/sh2.png') }}" alt="Product Image"
@@ -217,7 +219,7 @@
                                             qo'shish</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

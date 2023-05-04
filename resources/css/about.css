@@ -1,0 +1,8 @@
+#about-us {
+    margin-top: 100px;
+    height: 800px;
+    background: var(--white);
+}
+#about-us .about-text h1 {
+    font-weight: bold;
+}
