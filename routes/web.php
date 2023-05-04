@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrdersController;
@@ -32,3 +33,7 @@ Route::get('about', function() {
     return view('client.about');
 })->name('client.about');
 Route::get('order-item', [HomePageController::class, 'orderItem'])->name('order.item');
+
+Route::get('/cart',[CartController::class, 'show'])->name('cart.show');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');

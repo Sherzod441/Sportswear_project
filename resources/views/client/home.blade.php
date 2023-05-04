@@ -126,7 +126,10 @@
                                         <p>200 000 so'm</p>
                                     </div>
                                     <div class="add-product">
-                                        <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga qo'shish</button>
+                                        <form method="post" action="{{ route('cart.add', ['id' => $product->id]) }}">
+                                            @csrf
+                                            <button type="submit">Add to Cart</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
