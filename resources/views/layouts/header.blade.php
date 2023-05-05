@@ -23,10 +23,10 @@
             <ul class="navbar-nav">
                 <li class="nav-item d-flex align-items-center position-relative">
                    
-                    <a href="#" class="nav-link cart-shop">
+                    <a href="{{ route('order.item') }}" class="nav-link cart-shop">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
-                    <span class="cart-count">4</span>  
+                    <span class="cart-count">0</span>  
                 </li>
                 <li class="nav-link">
                     <a class="nav-link" href="tel:+998941116092">

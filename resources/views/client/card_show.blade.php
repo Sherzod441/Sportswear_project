@@ -1,45 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Shopping Cart</h1>
-
-@if (count($cartItems) === 0)
+@if(!$cart)
     <p>Your cart is empty.</p>
 @else
     <table>
         <thead>
             <tr>
-                <th>Product Name</th>
-                <th>Quantity</th>
+                <th>Name</th>
                 <th>Price</th>
-                <th>Total</th>
-                <th>Actions</th>
+                <th>Quantity</th>
+                <th>Image</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($cartItems as $id => $quantity)
+            @foreach($cart as $product)
                 <tr>
-                    <td>{{ $products[$id]->name }}</td>
-                    <td>{{ $quantity }}</td>
-                    <td>{{ $products[$id]->price }}</td>
-                    <td>{{ $quantity * $products[$id]->price }}</td>
-                    <td>
-                        <form method="post" action="{{ route('cart.remove', ['id' => $id]) }}">
-                            @csrf
-                            <button type="submit">Remove</button>
-                        </form>
-                    </td>
+                    <td>{{ $product['name'] }}</td>
+                    <td>{{ $product['price'] }}</td>
+                    <td>{{ $product['quantity'] }}</td>
+                    <td><img src="{{ $product['image'] }}" alt="{{ $product['name'] }}" width="50"></td>
                 </tr>
             @endforeach
         </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3"></td>
-                <td>{{ $total }}</td>
-                <td></td>
-            </tr>
-        </tfoot>
     </table>
 @endif
+
 
 @endsection

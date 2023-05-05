@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top: 120px">
-        <div class="h1">About US</div>
-    </div>
+    <section id="about-us" class="container shadow-lg rounded-4">
+        <div class="about-text p-4">
+            <h1>Biz Haqimizda</h1>
+        </div>
+        <div class="about-title">
+            
+        </div>
+    </section>
 @endsection

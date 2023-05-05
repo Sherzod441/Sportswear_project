@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -9,7 +10,11 @@ class HomePageController extends Controller
 {
     public function home()
     {
-        return view('client.home');
+        $products = Products::all();
+        // dd($products);
+        return view('client.home', [
+            'products' => $products,
+        ]);
     }
 
 

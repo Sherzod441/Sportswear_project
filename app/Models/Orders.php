@@ -11,3 +11,4 @@ class Orders extends Model
     protected $fillable = ['order_date','customer_name','customer_number','total_amount'];
     
 }
+

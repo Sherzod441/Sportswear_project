@@ -34,6 +34,5 @@ Route::get('about', function() {
 })->name('client.about');
 Route::get('order-item', [HomePageController::class, 'orderItem'])->name('order.item');
 
-Route::get('/cart',[CartController::class, 'show'])->name('cart.show');
-Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
-Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
