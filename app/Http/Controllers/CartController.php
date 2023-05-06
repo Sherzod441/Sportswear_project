@@ -33,8 +33,7 @@ class CartController extends Controller
                 $productId => [
                     'product_name' => $product->product_name,
                     'product_price' => $product->product_price,
-                    'product_type_id' => $product->product_type_id,
-                    'product_size' => $product->pruduct_size,
+                    'product_size' => $product->product_size,
                     'product_image' => $product->product_image,
                     'quantity' => 1
                 ]
@@ -43,13 +42,13 @@ class CartController extends Controller
             // Если товар уже есть в корзине, увеличиваем количество
             if (isset($cart[$productId])) {
                 $cart[$productId]['quantity']+=1;
+                $cart[$productId]['product_price'] *= $cart[$productId]['quantity'];
             } else {
                 // Если товара нет в корзине, добавляем его
                 $cart[$productId] = [
                     'product_name' => $product->product_name,
                     'product_price' => $product->product_price,
-                    'product_type_id' => $product->product_type_id,
-                    'product_size' => $product->pruduct_size,
+                    'product_size' => $product->product_size,
                     'product_image' => $product->product_image,
                     'quantity' => 1
                 ];

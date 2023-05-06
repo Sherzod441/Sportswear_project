@@ -97,7 +97,7 @@
                 </div>
             </div>   --}}
             {{-- Eng xitlari --}}
-            <div class="xit-products shadow rounded-5 p-4 my-4">
+           <div class="xit-products shadow rounded-5 p-4 my-4">
                 <div class="text-slider-icon d-flex justify-content-between align-items-center p-2">
                     <div class="text-product">
                         <h1>Barcha Mahsulotlar</h1>
@@ -109,119 +109,38 @@
                             <i class="fa-solid fa-angle-right"></i> </button>
                     </div>
                 </div>
-                @foreach ($products as $product)
-                    <div class="col-md-3 me-3">
-                        <div class="card card-body p-0 border-0">
-                            <div class="product-img">
-                                <img src="{{ $product->product_image }}" alt="Product Image" class="img-fluid" />
-                            </div>
-                            <div class="product-name mt-2">
-                                <p>{{ $product->product_name }}</p>
-                            </div>
-                            <div class="product-price">
-                                <p>{{ $product->product_price }} so'm</p>
-                            </div>
-                            <div class="add-product">
-                                <form method="post" action="{{ route('cart.add') }}">
-                                    @csrf
-                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <button type="submit">Добавить в корзину</button>
-                                </form>
-                            </div>
+                <div class="products mt-3">
+                    <div class="row">
+                        <div class="slider-product">
+                            @foreach ($products as $product)
+                                <div class="col-md-3 me-3">
+                                    <div class="card card-body p-0 border-0">
+                                        <div class="product-img">
+                                            <img src="{{ $product->product_image }}" alt="Product Image"
+                                                class="img-fluid" />
+                                        </div>
+                                        <div class="product-name mt-2">
+                                            <p>{{ $product->product_name }}</p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>{{ $product->product_price }} so'm</p>
+                                        </div>
+                                        <div class="add-product">
+                                        <form method="post" action="{{ route('cart.add') }}">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                            <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga
+                                                qo'shish</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
-                @endforeach
-                {{-- <div class="col-md-3 me-3">
-                                <div class="card card-body p-0 border-0">
-                                    <div class="product-img">
-                                        <img src="{{ asset('images/shoes/sh2.png') }}" alt="Product Image"
-                                            class="img-fluid" />
-                                    </div>
-                                    <div class="product-name mt-2">
-                                        <p>Kovush</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <p>200 000 so'm</p>
-                                    </div>
-                                    <div class="add-product">
-                                        <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga qo'shish</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 me-3">
-                                <div class="card card-body p-0 border-0">
-                                    <div class="product-img">
-                                        <img src="{{ asset('images/shoes/sh3.png') }}" alt="Product Image"
-                                            class="img-fluid" />
-                                    </div>
-                                    <div class="product-name mt-2">
-                                        <p>Kovush</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <p>200 000 so'm</p>
-                                    </div>
-                                    <div class="add-product">
-                                        <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga qo'shish</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 me-3">
-                                <div class="card card-body p-0 border-0">
-                                    <div class="product-img">
-                                        <img src="{{ asset('images/shoes/sh4.png') }}" alt="Product Image"
-                                            class="img-fluid" />
-                                    </div>
-                                    <div class="product-name mt-2">
-                                        <p>Kovush</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <p>200 000 so'm</p>
-                                    </div>
-                                    <div class="add-product">
-                                        <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga
-                                            qo'shish</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 me-3">
-                                <div class="card card-body p-0 border-0">
-                                    <div class="product-img">
-                                        <img src="{{ asset('images/shoes/sh4.png') }}" alt="Product Image"
-                                            class="img-fluid" />
-                                    </div>
-                                    <div class="product-name mt-2">
-                                        <p>Kovush</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <p>200 000 so'm</p>
-                                    </div>
-                                    <div class="add-product">
-                                        <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga
-                                            qo'shish</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 me-3">
-                                <div class="card card-body p-0 border-0">
-                                    <div class="product-img">
-                                        <img src="{{ asset('images/shoes/sh1.png') }}" alt="Product Image"
-                                            class="img-fluid" />
-                                    </div>
-                                    <div class="product-name mt-2">
-                                        <p>Kovush</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <p>200 000 so'm</p>
-                                    </div>
-                                    <div class="add-product">
-                                        <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga
-                                            qo'shish</button>
-                                    </div>
-                                </div>
-                            </div> --}}
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-        </div>
-        </div>
+    </div>
     </section>
 @endsection

@@ -32,7 +32,7 @@ Route::get('/lang', [HomePageController::class, 'lang'])->name('language');
 Route::get('about', function() {
     return view('client.about');
 })->name('client.about');
-Route::get('order-item', [HomePageController::class, 'orderItem'])->name('order.item');
+// Route::get('order-item', [HomePageController::class, 'orderItem'])->name('order.item');
 
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
