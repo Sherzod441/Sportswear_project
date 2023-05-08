@@ -79,6 +79,7 @@
             // console.log(url)
         }
     </script>
+    @yield('scripts')
 </body>
 
 </html>

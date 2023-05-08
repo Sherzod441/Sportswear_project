@@ -68,6 +68,7 @@
                 </div>
             </div>
             <div class="xit-products shadow rounded-5 p-4 my-4">
+
                 <div class="text-slider-icon d-flex justify-content-between align-items-center p-2">
                     <div class="text-product">
                         <h1>Barcha Mahsulotlar</h1>
@@ -96,8 +97,11 @@
                                             <p>{{ $product->product_price }} so'm</p>
                                         </div>
                                         <div class="add-product">
-                                            <button> <i class="fa-solid fa-basket-shopping"></i> &nbsp;Savatga
-                                                qo'shish</button>
+                                            <form>
+                                                <button type="button" onclick="addProduct({{ $product->id }})"> <i class="fa-solid fa-basket-shopping"
+                                                        ></i> &nbsp;Savatga
+                                                    qo'shish</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -108,4 +112,26 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        function addProduct(productId) {
+            $.ajax({
+                url: "{{ route('cart.add') }}",
+                method: "POST",
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    product_id: productId
+                },
+                success: function({cart}) {
+                    console.log(cart)
+                    if (cart) {
+                        let count = Object.keys(cart).length
+                        $('.cart-count').html(count);
+                    }
+                }
+            });
+        }
+    </script>
 @endsection

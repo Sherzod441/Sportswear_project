@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrdersController;
@@ -31,4 +32,9 @@ Route::get('/lang', [HomePageController::class, 'lang'])->name('language');
 Route::get('about', function() {
     return view('client.about');
 })->name('client.about');
-Route::get('order-item', [HomePageController::class, 'orderItem'])->name('order.item');
+// Route::get('order-item', [HomePageController::class, 'orderItem'])->name('order.item');
+
+Route::post('add-cart', [CartController::class, 'add'])->name('cart.add');
+Route::get('cart', [CartController::class, 'index'])->name('cart');
+Route::put('card-update', [CartController::class, 'cartUpdate'])->name('cart.update');
+Route::delete('remove-item', [CartController::class, 'removeItem'])->name('remove.item');

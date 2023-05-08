@@ -1,0 +1,12 @@
+#orders {
+    margin-top: 100px;
+    height: 600px;
+    background: var(--white);
+}
+#orders .basket {
+    padding: 20px;
+}
+#orders .basket h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
