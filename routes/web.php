@@ -38,3 +38,4 @@ Route::post('add-cart', [CartController::class, 'add'])->name('cart.add');
 Route::get('cart', [CartController::class, 'index'])->name('cart');
 Route::put('card-update', [CartController::class, 'cartUpdate'])->name('cart.update');
 Route::delete('remove-item', [CartController::class, 'removeItem'])->name('remove.item');
+Route::post('order', [CartController::class, 'order'])->name('cart.order');

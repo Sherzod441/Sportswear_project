@@ -38,6 +38,8 @@
             @yield('content')
         </main>
 
+        {{-- services --}}
+        @include('layouts.services')
         {{-- footer --}}
         @include('layouts.footer')
     </div>

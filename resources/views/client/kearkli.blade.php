@@ -17,8 +17,8 @@
                             <td>{{ $product['product_name'] }} </td>
                             <td>{{ $product['product_price'] }}</td>
                             <td>{{ $product['product_size'] }}</td>
-                            <td> <i class="fa-solid fa-minus  me-3 rounded"
-                                    onclick="cartItem({{ $product['product_id'] }}, {{ $product['quantity'] }}, status='minus')" disabled></i>
+                                <td> <i class="fa-solid fa-minus  me-3 rounded"
+                                        onclick="cartItem({{ $product['product_id'] }}, {{ $product['quantity'] }}, status='minus')" disabled></i>
                                 <span class="quantity"
                                     product-id="{{ $product['product_id'] }}">{{ $product['quantity'] }}</span> <i
                                     class="fa-solid fa-plus ms-3"

@@ -3,6 +3,7 @@
 @import "home.css";
 @import "about.css";
 @import "orders.css";
+@import "services.css";
 
 :root {
     --white: #fff;

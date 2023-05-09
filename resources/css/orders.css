@@ -1,6 +1,6 @@
 #orders {
     margin-top: 100px;
-    height: 600px;
+    /* height: 600px; */
     background: var(--white);
 }
 #orders .basket {
@@ -9,4 +9,32 @@
 #orders .basket h1 {
     font-size: 45px;
     font-weight: bold;
+}
+#orders .basket-products .product-border {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+#orders .plus-minus strong {
+    font-size: 20px;
+    margin: 5px;
+}
+#orders .plus-minus button {
+    outline: none;
+    border: none;
+    background: #f7f5f9;
+    font-weight: bold;
+    font-size: 28px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    justify-content: center;
+    border-radius: 50%;
+}
+#orders .product-remove {
+    cursor: pointer;
+}
+#orders .product-total span {
+    font-weight: bold;
+    font-size: 22px;
 }
